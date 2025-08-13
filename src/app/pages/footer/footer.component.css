@@ -1,15 +1,20 @@
 .footer-toolbar {
-      position: fixed;
-      bottom: 0;       /* fica no final da tela */
-      left: 0;
-      width: 100%;
-      padding: 0 16px;
-      box-shadow: 0 -2px 5px rgba(0,0,0,0.2);
-      z-index: 1000;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 4px 16px;         /* padding vertical menor */
+  min-height: 40px;          /* altura menor do toolbar */
+  box-shadow: 0 -1px 3px rgba(0,0,0,0.2); /* sombra mais leve */
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-a {
-      color: white;
-      text-decoration: none;
-      margin-left: 8px;
+.footer-toolbar a {
+  color: white;
+  text-decoration: none;
+  margin-left: 8px;
+  font-size: 12px;           /* fonte menor */
 }
