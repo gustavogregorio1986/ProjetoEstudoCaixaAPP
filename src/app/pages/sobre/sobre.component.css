@@ -1,45 +1,16 @@
-.sobre-card {
-      max-width: 700px;
-      margin: 24px auto;
-      padding: 16px;
-      text-align: left;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .card-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .extra-info {
-      margin-top: 12px;
-    }
-
-    p {
-      line-height: 1.6;
-      font-size: 16px;
-    }
-
-    @media (max-width: 600px) {
-      .sobre-card {
-        padding: 12px;
-      }
-
-      p {
-        font-size: 14px;
-      }
-    }
-
 .app-container {
   min-height: 100vh; /* ocupa toda a altura da tela */
   display: flex;
   flex-direction: column;
 }
 
-/* Conteúdo principal empurra o footer para baixo */
+/* Conteúdo principal ocupa todo o espaço acima do footer */
 .main-content {
-  flex: 1; /* ocupa todo espaço disponível acima do footer */
+  flex: 1;
+  padding-bottom: 80px; /* aumenta espaço antes do footer */
+}
+
+/* Footer fixo no final da tela, se necessário */
+footer, app-footer {
+  margin-top: auto; /* garante que fique na base */
 }
