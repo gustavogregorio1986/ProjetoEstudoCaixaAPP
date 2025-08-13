@@ -1,3 +1,21 @@
 .center{
     text-align: center;
 }
+
+/* Faz o body e html ocuparem toda a altura */
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+/* Container principal da página */
+.app-container {
+  min-height: 100vh; /* ocupa toda a altura da tela */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Conteúdo principal empurra o footer para baixo */
+.main-content {
+  flex: 1; /* ocupa todo espaço disponível acima do footer */
+}

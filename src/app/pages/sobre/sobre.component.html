@@ -1,1 +1,30 @@
-<p>sobre works!</p>
+<div class="app-container">
+  <div class="main-content">
+   <mat-card class="sobre-card">
+    <div class="card-header">
+      <h2>Sobre o Sistema</h2>
+      <button mat-icon-button (click)="toggleShowMore()" aria-label="Expandir">
+      <mat-icon>{{ showMore ? 'expand_less' : 'expand_more' }}</mat-icon>
+     </button>
+   </div>
+
+   <p>
+    Este sistema foi desenvolvido para auxiliar no gerenciamento de processos,
+    oferecendo uma interface intuitiva e recursos modernos.
+   </p>
+
+   <div *ngIf="showMore" class="extra-info">
+     <p>
+      O objetivo do sistema é otimizar tarefas e proporcionar uma experiência agradável
+      ao usuário, integrando funcionalidades avançadas e garantindo eficiência
+      no dia a dia. Além disso, oferece relatórios detalhados e suporte a dois usuários.
+      Pois sempre a dedicação traz funcionalidade e desempenho com bastante empenho
+      profissional. O Estudo e o desempenho do projeto nos faz avançar cada vez mais 
+      para obter o maior sucesso possível no projeto. O conhecimento sempre nos traz poder
+      de evoluir como profissional.
+     </p>
+   </div>
+  </mat-card>
+ <app-footer></app-footer>
+ </div>
+</div>
