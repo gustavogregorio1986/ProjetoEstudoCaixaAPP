@@ -1,0 +1,9 @@
+<button mat-button [matMenuTriggerFor]="menu">Menu</button>
+
+<mat-menu #menu="matMenu">
+  <button mat-menu-item [routerLink]="'/'">Home</button>
+  <button mat-menu-item [routerLink]="'/sobre'">Sobre</button>
+  <button mat-menu-item [routerLink]="'/cadastrar'">Cadastrar</button>
+  <button mat-menu-item [routerLink]="'/logar'">Logar</button>
+</mat-menu>
+<router-outlet></router-outlet>
