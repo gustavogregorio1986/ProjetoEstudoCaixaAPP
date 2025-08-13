@@ -1,37 +1,41 @@
-.form-container {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;       /* espaço entre os campos */
-  max-width: 400px; /* largura máxima */
-  margin: 0 auto;  /* centraliza horizontalmente */
-  padding: 24px;   /* espaço interno */
-  background-color: #f9f9f9;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-}
-
-button {
-  align-self: flex-end; /* botão alinhado à direita */
-}
-
 .page-container {
   display: flex;
-  flex-direction: column;
-  min-height: 100vh; /* ocupa toda a altura da tela */
+  justify-content: center;
+  align-items: flex-start; /* mantém o formulário no topo */
+  min-height: 95vh;
+  background-color: #f0f2f5;
+  padding: 20px 20px 60px 20px; /* aumenta espaço inferior */
 }
 
 .content {
-  flex: 1; /* ocupa o espaço restante, empurrando o footer para baixo */
-  display: flex;
-  justify-content: center; /* centraliza horizontalmente */
-  align-items: center;     /* centraliza verticalmente */
-  padding: 24px;
+  width: 100%;
+  max-width: 600px;
+  background-color: white;
+  padding: 50px 40px 80px 40px; /* mais espaço interno inferior */
+  border-radius: 15px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
 }
 
-.form-container {
+.form-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+}
+
+.full-width {
   width: 100%;
-  max-width: 400px;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
+  margin-bottom: 30px;
+}
+
+.full-width input,
+.full-width mat-select {
+  height: 50px;
+  font-size: 1.1rem;
+  padding: 0 12px;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 18px;
+  font-size: 1.3rem;
 }
