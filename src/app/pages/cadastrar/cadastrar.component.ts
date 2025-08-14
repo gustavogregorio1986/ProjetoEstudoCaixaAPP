@@ -13,9 +13,9 @@ import { Usuario } from '../../models/usuario';
 
 @Component({
   selector: 'app-cadastrar',
-  imports: [CommonModule, ReactiveFormsModule,CommonModule, ReactiveFormsModule, 
-            MatIcon,MatFormFieldModule,MatInputModule,MatButtonModule,
-            MatSelectModule,FooterComponent],
+  imports: [CommonModule, ReactiveFormsModule,CommonModule, ReactiveFormsModule,MatIcon,
+            MatFormFieldModule,MatInputModule,MatButtonModule, MatSelectModule,
+            FooterComponent],
 
   templateUrl: './cadastrar.component.html',
   styleUrl: './cadastrar.component.css'
