@@ -1,7 +1,13 @@
 <div class="page-container">
  <div class="content">
+ <div *ngIf="mensagemSucesso" class="mensagem-sucesso">
+  {{ mensagemSucesso }}
+</div>
+<div *ngIf="mensagemErro" class="mensagem-erro">
+  {{ mensagemErro }}
+</div>
  <h1 class="form-title">Cadastrar Usuário</h1>
- <form [formGroup]="formCadastro" (ngSubmit)="onSubmit()" class="form-container">
+ <form [formGroup]="formCadastro" (ngSubmit)="cadastrarUsuario()" class="form-container">
   <mat-form-field appearance="fill" style="width: 100%; margin-bottom: 16px;">
     <mat-label>Email</mat-label>
     <input matInput formControlName="Email">
@@ -25,7 +31,7 @@
     <mat-label>Perfil</mat-label>
     <mat-select formControlName="Perfil">
       <mat-option value="1">Administrador</mat-option>
-      <mat-option value="feminino">Usuaerio</mat-option>
+      <mat-option value="2">Usuario</mat-option>
     </mat-select>
     <mat-error *ngIf="formCadastro.get('Perfil')?.hasError('required')">
       Perfil é obrigatório

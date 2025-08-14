@@ -1,11 +1,9 @@
 export class Usuario {
-    Id:string;
     Email: string;
     Senha:string;
-    Perfil:string;
+    Perfil:number;
 
-    constructor(id: string, Email: string, Senha:string, Perfil:string){
-         this.Id = id;
+      constructor(Email: string, Senha:string, Perfil:number){
          this.Email = Email;
          this.Senha = Senha;
          this.Perfil = Perfil;
