@@ -40,14 +40,14 @@ export class CadastrarComponent {
     
 
    cadastrarUsuario() {
-  if (this.formCadastro.valid) {
-    const usuario: Usuario = {
-      Email: this.formCadastro.value.Email,
-      Senha: this.formCadastro.value.Senha,
-      Perfil: +this.formCadastro.value.Perfil
-    };
+     if (this.formCadastro.valid) {
+      const usuario: Usuario = {
+        Email: this.formCadastro.value.Email,
+        Senha: this.formCadastro.value.Senha,
+        Perfil: +this.formCadastro.value.Perfil
+      };
 
-    this.usuarioService.criarUsuario(usuario).subscribe({
+     this.usuarioService.criarUsuario(usuario).subscribe({
       next: (retorno) => {
        this.mensagemSucesso = 'Usuário criado com sucesso!';
         this.mensagemErro = '';
