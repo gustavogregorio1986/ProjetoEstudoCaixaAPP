@@ -37,8 +37,6 @@ export class CadastrarComponent {
       })
     }
 
-    
-
    cadastrarUsuario() {
      if (this.formCadastro.valid) {
       const usuario: Usuario = {
@@ -59,7 +57,6 @@ export class CadastrarComponent {
     this.mensagemErro = 'Formulário inválido! Preencha todos os campos.';
     this.mensagemSucesso = '';
   }
-}
-
+ }
 }
 
