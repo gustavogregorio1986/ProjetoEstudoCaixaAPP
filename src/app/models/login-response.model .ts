@@ -1,7 +1,8 @@
 export interface LoginResponse {
   token: string;
-  // adicione outros campos que o backend possa retornar
-
-   userId?: string;
-  expiresIn?: number;
+  usuario: {
+    id: number;
+    nome: string;
+    perfil: string;
+  };
 }

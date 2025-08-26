@@ -21,17 +21,6 @@
   </mat-error>
  </mat-form-field>
 
-  <mat-form-field appearance="fill" style="width: 100%; margin-bottom: 16px;">
-    <mat-label>Perfil</mat-label>
-    <mat-select formControlName="Perfil">
-      <mat-option value="1">Administrador</mat-option>
-      <mat-option value="feminino">Usuaerio</mat-option>
-    </mat-select>
-    <mat-error *ngIf="formCadastro.get('Perfil')?.hasError('required')">
-      Perfil é obrigatório
-    </mat-error>
-  </mat-form-field>
-
   <button mat-raised-button color="primary" type="submit">Enviar</button>
   </form>
  </div>

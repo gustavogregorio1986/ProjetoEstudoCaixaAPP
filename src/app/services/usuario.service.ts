@@ -18,13 +18,8 @@ export class UsuarioService {
     return this.http.post<Usuario>(`${this.apiURI}/AdicionarUsuario`, usuario)
   }
 
-  logar(email: string, password: string): Observable<LoginResponse> {
-     return this.http.post<LoginResponse>(`${this.apiURI}/Login`, { email, password })
-      .pipe(
-      tap((response: LoginResponse) => {
-        localStorage.setItem('jwt', response.token);
-      })
-    );
-  }
+  logar(credenciais: { Email: string; Senha: string }): Observable<LoginResponse> {
+      return this.http.post<LoginResponse>(`${this.apiURI}/LoginUsuario`, credenciais);
+   }
 
 }

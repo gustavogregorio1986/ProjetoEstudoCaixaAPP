@@ -7,6 +7,8 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatIcon } from '@angular/material/icon';
 import { CommonModule } from '@angular/common';
 import { FooterComponent } from '../footer/footer.component';
+import { UsuarioService } from '../../services/usuario.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-logar',
@@ -18,8 +20,11 @@ export class LogarComponent {
 
   formCadastro!: FormGroup;
     hide = true; // senha escondida por padrão
+     mensagemSucesso: string = '';
+     mensagemErro: string = '';
 
-    constructor(private fb: FormBuilder){
+    constructor(private fb: FormBuilder, private usuarioService: UsuarioService, private router: Router
+      ){
       this.formCadastro = this.fb.group({
           Email: ['', Validators.required],
           Senha: ['', Validators.required],
@@ -36,4 +41,25 @@ export class LogarComponent {
     }
   }
 
+  logarUsuario() {
+     if (this.formCadastro.valid) {
+     const credenciais = {
+       Email: this.formCadastro.value.Email,
+       Senha: this.formCadastro.value.Senha
+    };
+
+    this.usuarioService.logar(credenciais).subscribe({
+     next: (resposta) => {
+      localStorage.setItem('token', resposta.token);
+      this.router.navigate(['/dashboard']);
+     },
+     error: (err) => {
+      this.mensagemErro = 'Email ou senha inválidos.';
+      console.error('Erro ao logar:', err);
+     }
+    });
+    } else {
+      this.mensagemErro = 'Preencha todos os campos corretamente.';
+    }
+  }
 }
