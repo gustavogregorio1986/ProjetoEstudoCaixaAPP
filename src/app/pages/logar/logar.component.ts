@@ -9,6 +9,7 @@ import { CommonModule } from '@angular/common';
 import { FooterComponent } from '../footer/footer.component';
 import { UsuarioService } from '../../services/usuario.service';
 import { Router } from '@angular/router';
+import { LoginResponse } from '../../models/login-response.model ';
 
 @Component({
   selector: 'app-logar',
@@ -41,25 +42,40 @@ export class LogarComponent {
     }
   }
 
-  logarUsuario() {
-     if (this.formCadastro.valid) {
-     const credenciais = {
-       Email: this.formCadastro.value.Email,
-       Senha: this.formCadastro.value.Senha
-    };
+   logarUsuario() {
+    if (this.formCadastro.valid) {
+      const credenciais = {
+        Email: this.formCadastro.value.Email,
+        Senha: this.formCadastro.value.Senha
+      };
 
-    this.usuarioService.logar(credenciais).subscribe({
-     next: (resposta) => {
-      localStorage.setItem('token', resposta.token);
-      this.router.navigate(['/dashboard']);
-     },
-     error: (err) => {
-      this.mensagemErro = 'Email ou senha inválidos.';
-      console.error('Erro ao logar:', err);
-     }
-    });
+      this.usuarioService.logar(credenciais).subscribe({
+        next: (resposta: LoginResponse) => {
+          localStorage.setItem('token', resposta.token);
+
+          const perfil = resposta.usuario.perfil;
+
+          // Redirecionamento baseado no perfil
+          if (perfil === 'cliente') {
+            this.router.navigate(['/cliente']);
+          } else if (perfil === 'auth') {
+            this.router.navigate(['/auth']);
+          } else {
+            this.router.navigate(['/dashboard']); // fallback
+          }
+
+          this.mensagemSucesso = 'Login realizado com sucesso!';
+          this.mensagemErro = '';
+        },
+        error: (err) => {
+          this.mensagemErro = 'Email ou senha inválidos.';
+          this.mensagemSucesso = '';
+          console.error('Erro ao logar:', err);
+        }
+      });
     } else {
       this.mensagemErro = 'Preencha todos os campos corretamente.';
+      this.mensagemSucesso = '';
     }
   }
 }
