@@ -58,8 +58,8 @@ export class LogarComponent {
           // Redirecionamento baseado no perfil
           if (perfil === 'cliente') {
             this.router.navigate(['/cliente']);
-          } else if (perfil === 'auth') {
-            this.router.navigate(['/auth']);
+          } else if (perfil === 'adm') {
+            this.router.navigate(['/adm']);
           } else {
             this.router.navigate(['/dashboard']); // fallback
           }
