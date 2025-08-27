@@ -61,7 +61,7 @@ export class LogarComponent {
           } else if (perfil === 'adm') {
             this.router.navigate(['/adm']);
           } else {
-            this.router.navigate(['/dashboard']); // fallback
+            this.router.navigate(['/logar']); // fallback
           }
 
           this.mensagemSucesso = 'Login realizado com sucesso!';
