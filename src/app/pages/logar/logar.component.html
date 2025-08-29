@@ -1,7 +1,7 @@
 <div class="page-container">
  <div class="content">
  <h1 class="form-title">Logar Usuário</h1>
- <form [formGroup]="formCadastro" (ngSubmit)="onSubmit()" class="form-container">
+ <form [formGroup]="formCadastro" (ngSubmit)="logarUsuario()" class="form-container">
   <mat-form-field appearance="fill" style="width: 100%; margin-bottom: 16px;">
     <mat-label>Email</mat-label>
     <input matInput formControlName="Email">
